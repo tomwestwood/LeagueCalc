@@ -22,7 +22,7 @@ namespace LeagueCalculator
             services.AddControllersWithViews();
             services.AddSpaStaticFiles(c =>
             {
-
+                c.RootPath = "ClientApp/dist";
             });
             //services.AddStaticSpaFiles(c =>
             //{
