@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.OpenApi.Models;
 
 namespace LeagueCalculator
 {
@@ -21,6 +20,10 @@ namespace LeagueCalculator
         {
 
             services.AddControllersWithViews();
+            services.AddSpaStaticFiles(c =>
+            {
+
+            });
             //services.AddStaticSpaFiles(c =>
             //{
             //   c.SwaggerDoc("v1", new OpenApiInfo { Title = "LeagueCalculator", Version = "v1" });

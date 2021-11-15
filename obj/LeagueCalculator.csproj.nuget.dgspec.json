@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/Users/tomwestwood/Desktop/LeagueCalculator/LeagueCalculator.csproj": {}
+    "C:\\Users\\tom.westwood\\Documents\\Personal\\Work\\Tom\\LeagueCalc\\LeagueCalculator.csproj": {}
   },
   "projects": {
-    "/Users/tomwestwood/Desktop/LeagueCalculator/LeagueCalculator.csproj": {
+    "C:\\Users\\tom.westwood\\Documents\\Personal\\Work\\Tom\\LeagueCalc\\LeagueCalculator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tomwestwood/Desktop/LeagueCalculator/LeagueCalculator.csproj",
+        "projectUniqueName": "C:\\Users\\tom.westwood\\Documents\\Personal\\Work\\Tom\\LeagueCalc\\LeagueCalculator.csproj",
         "projectName": "LeagueCalculator",
-        "projectPath": "/Users/tomwestwood/Desktop/LeagueCalculator/LeagueCalculator.csproj",
-        "packagesPath": "/Users/tomwestwood/.nuget/packages/",
-        "outputPath": "/Users/tomwestwood/Desktop/LeagueCalculator/obj/",
+        "projectPath": "C:\\Users\\tom.westwood\\Documents\\Personal\\Work\\Tom\\LeagueCalc\\LeagueCalculator.csproj",
+        "packagesPath": "C:\\Users\\tom.westwood\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tom.westwood\\Documents\\Personal\\Work\\Tom\\LeagueCalc\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "/Users/tomwestwood/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\tom.westwood\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -42,7 +48,7 @@
               "target": "Package",
               "version": "[8.1.1, )"
             },
-            "Microsoft.AspNetCode.SpaServices.Extensions": {
+            "Microsoft.AspNetCore.SpaServices.Extensions": {
               "target": "Package",
               "version": "[3.1.21, )"
             },
@@ -73,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.403/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
