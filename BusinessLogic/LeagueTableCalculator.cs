@@ -91,13 +91,22 @@ namespace LeagueCalculator.BusinessLogic
         private LeagueTable GetLeagueTable(List<LeagueTableEntry> entries)
         {
             var position = 1;
-            entries.OrderByDescending(lte => lte.Points).ThenByDescending(lte => lte.GoalDifference).ToList().ForEach(lte => 
+            entries 
+                .OrderByDescending(lte => lte.Points)
+                .ThenByDescending(lte => lte.GoalDifference)
+                .ThenByDescending(lte => lte.GoalsScored)
+                .ThenBy(lte => lte.TeamName)
+                .ToList()
+                .ForEach(lte => 
             {
-                lte.TeamPosition = position;
+                lte.TeamPosition = GetJointRanking(entries, lte)?.TeamPosition ?? position;
                 position++;
             });
 
             return new LeagueTable(entries.OrderBy(lte => lte.TeamPosition).ToList());
         }
+
+        private LeagueTableEntry GetJointRanking(List<LeagueTableEntry> entries, LeagueTableEntry entry)
+            => entries.Where(e => e != entry && e.TeamPosition > 0 && e.Points == entry.Points && e.GoalDifference == entry.GoalDifference && e.GoalsScored == entry.GoalsScored).FirstOrDefault();
     }
 }

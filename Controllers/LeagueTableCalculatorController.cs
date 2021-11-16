@@ -29,7 +29,7 @@ namespace LeagueCalculator.Controllers
 
                 var extensionType = Path.GetExtension(file.FileName);
                 if(!acceptedFileTypes.Contains(extensionType))
-                    throw new Exception($"Unsupported file type");
+                    throw new Exception($"Unsupported file type.");
 
                 LeagueTableCalculator leagueTableCalculator;
                 switch(extensionType)
@@ -38,16 +38,14 @@ namespace LeagueCalculator.Controllers
                         leagueTableCalculator = new LeagueTableCalculator(new CsvInputStrategy(Environment.NewLine));
                         break;
                     default: 
-                        throw new Exception("Unsupported file type...");  
+                        throw new Exception("Unsupported file type...");
                 }
 
-                //var stringFileContents = FileTools.GetFileStringContents(file);
-                var leagueTable = leagueTableCalculator.GetFixtureUpload(file);
-                return leagueTable;
+                return leagueTableCalculator.GetFixtureUpload(file);
             }
             catch(Exception ex)
             {
-                throw new Exception($"Problem uploading file... {ex.Message.ToString()}");
+                throw new Exception($"Problem uploading file... {ex.Message}");
             }
         }
     }
