@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using CsvHelper;
 using LeagueCalculator.Models.FileInputStrategy.Interfaces;
 using Microsoft.AspNetCore.Http;
 
@@ -23,18 +25,21 @@ namespace LeagueCalculator.Models.FileInputStrategy.Concrete
             throw new NotImplementedException();
         }
 
-        public string GetFileContents(IFormFile file)
+        public FixturesUpload GetFixtureUploadFromFile(IFormFile file)
         {
-            var result = new StringBuilder();
             using (var reader = new StreamReader(file.OpenReadStream()))
+            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
             {
-                while (reader.Peek() >= 0)
-                    result.AppendLine(reader.ReadLine());
+                var records = csv.GetRecords<Fixture>().ToList();
+                return new FixturesUpload()
+                {
+                    Fixtures = records
+                };
             }
-            return result.ToString();
         }
 
-        public FixturesUpload GetFixtureUploadFromFile(string fileContents)
+        // to delete...
+        public FixturesUpload GetFixtureUploadFromFile_Old(string fileContents)
         {
             var fixtures = new FixturesUpload();
             var stringFixtureRows = new List<string>(fileContents.Split(_delimiter));

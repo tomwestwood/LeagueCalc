@@ -8,8 +8,11 @@ namespace LeagueCalculator.Models
         [JsonProperty("Div")]
         public string Div { get; set; }
 
-        [JsonProperty("KickOff")]
-        public DateTime KickOff { get; set; }
+        [JsonProperty("Date")]
+        public string Date { get; set; }
+
+        [JsonProperty("Time")]
+        public string Time { get; set; }
 
         [JsonProperty("HomeTeam")]
         public string HomeTeam { get; set; }
@@ -37,5 +40,8 @@ namespace LeagueCalculator.Models
 
         [JsonProperty("Referee")]
         public string Referee { get; set; }
+
+        [JsonProperty("KickOff")]
+        public DateTime KickOff => Convert.ToDateTime(Date + " " + Time);
     }
 }

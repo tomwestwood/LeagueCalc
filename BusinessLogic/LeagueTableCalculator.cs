@@ -22,8 +22,7 @@ namespace LeagueCalculator.BusinessLogic
             //if(!_inputStrategy.FileIsValid(fileStream))
             //throw new Exception("File contents are invalid");
 
-            var fileContents = _inputStrategy.GetFileContents(file);
-            var fixtureUpload = _inputStrategy.GetFixtureUploadFromFile(fileContents);
+            var fixtureUpload = _inputStrategy.GetFixtureUploadFromFile(file);
             return GetLeagueTable(fixtureUpload);
         }
 

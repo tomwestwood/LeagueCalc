@@ -1,0 +1,25 @@
+<mat-table [dataSource]="results" *ngIf="results" class="mat-elevation-z8">  
+  <mat-header-row *matHeaderRowDef="displayedColumns;"></mat-header-row>
+  <mat-row *matRowDef="let element; columns: displayedColumns"></mat-row>
+  <ng-container matColumnDef="kickOff">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Kick off</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.kickOff}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="homeTeam">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Home team</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.homeTeam}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="score">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Score</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.fthg}} - {{element.ftag}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="awayTeam">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Home team</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.awayTeam}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="referee">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Referee</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.referee}}</mat-cell>
+  </ng-container>
+</mat-table>
+<mat-paginator #paginator [pageSizeOptions]="[10, 5]" showFirstLastButtons></mat-paginator>

@@ -1,10 +1,20 @@
-<div><b>Part 1:</b> - please select a .CSV file:</div>
-<input type="file" (change)="uploadFile($event)" accept=".csv" />
+<mat-card class="upload-file-card">
+  <mat-card-subtitle>Please upload a .csv file with the appropriate headings.</mat-card-subtitle>
+  <mat-card-title>UPLOAD FILE</mat-card-title>
+  <mat-card-content>
+    <input type="file" (change)="uploadFile($event)" accept=".csv" />
+  </mat-card-content>
+  <mat-divider inset></mat-divider>
+  <mat-card-actions>
+    <button mat-button [disabled]="!file" (click)="calculateLeagueFromFile()">CALCULATE LEAGUE</button>
+    <button mat-button [disabled]="!file">CANCEL</button>
+  </mat-card-actions>
+  <mat-card-footer>
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+  </mat-card-footer>
+</mat-card>
 
-<div *ngIf="file"><b>Part 2:</b> - calculate league table:</div>
-<button mat-raised-button *ngIf="file" (click)="calculateLeagueFromFile()">Calculate...</button> 
-
-<mat-table [dataSource]="leagueTable" *ngIf="leagueTable" class="mat-elevation-z8" matSort matSortActive="position" matSortDirection="asc">
+<mat-table [dataSource]="leagueTable" *ngIf="leagueTable && !loading" class="mat-elevation-z8" matSort matSortActive="position" matSortDirection="asc">
   <mat-header-row *matHeaderRowDef="displayedColumns;"></mat-header-row>
   <mat-row *matRowDef="let element; columns: displayedColumns"></mat-row>
   <ng-container matColumnDef="teamPosition">
@@ -30,5 +40,11 @@
   <ng-container matColumnDef="points">
     <mat-header-cell *matHeaderCellDef mat-sort-header>Points</mat-header-cell>
     <mat-cell *matCellDef="let element">{{element.points}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="options">
+    <mat-header-cell *matHeaderCellDef>Options</mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <button mat-raised-button color="primary" (click)="showResults(element)">Show results</button>
+    </mat-cell>
   </ng-container>
 </mat-table>

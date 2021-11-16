@@ -34,6 +34,7 @@
       "LeagueCalculator/1.0.0": {
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.1",
+          "CsvHelper": "27.2.0",
           "Microsoft.AspNetCore.SpaServices.Extensions": "3.1.21",
           "Swashbuckle.AspNetCore": "5.6.3",
           "Newtonsoft.Json": "13.0.1",
@@ -357,6 +358,17 @@
         },
         "compile": {
           "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
+      "CsvHelper/27.2.0": {
+        "runtime": {
+          "lib/net5.0/CsvHelper.dll": {
+            "assemblyVersion": "27.0.0.0",
+            "fileVersion": "27.2.0.0"
+          }
+        },
+        "compile": {
+          "lib/net5.0/CsvHelper.dll": {}
         }
       },
       "Microsoft.AspNetCore.NodeServices/3.1.21": {
@@ -2264,6 +2276,13 @@
       "sha512": "sha512-xSWoVzOipuDU4PeZcUfaZQ+xqXU8QmGv5jrdlxt3MYm9xaOmrefqcfzGQ3SQ+D+8wfBa/ZwSuL0qKOVj080inA==",
       "path": "automapper.extensions.microsoft.dependencyinjection/8.1.1",
       "hashPath": "automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512"
+    },
+    "CsvHelper/27.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TvOda5RWz/KK5MDGIuEE5WxckPCO+cEmws1ZsLas+mSFZJSpHp/v6xl2o72PXr8NcOndKhR7k0wuLYQQ/1R9fQ==",
+      "path": "csvhelper/27.2.0",
+      "hashPath": "csvhelper.27.2.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.NodeServices/3.1.21": {
       "type": "package",

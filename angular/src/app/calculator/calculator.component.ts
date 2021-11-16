@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
+import { LeagueTable } from '../models/leagueTable';
+import { LeagueTableEntry } from '../models/leagueTableEntry';
 import { LeagueFileConverterService } from '../services/league-file-converter.service';
+import { TeamResultsComponent } from '../team-results/team-results.component';
 
 @Component({
   selector: 'app-calculator',
@@ -9,29 +14,42 @@ import { LeagueFileConverterService } from '../services/league-file-converter.se
 })
 export class CalculatorComponent {
   file: File | undefined;
-  leagueTable: MatTableDataSource<any> | undefined;
-  displayedColumns: string[] = ['teamPosition', 'teamName', 'goalsScored', 'goalsConceded', 'goalDifference', 'points'];
+  leagueTable: MatTableDataSource<LeagueTableEntry> | undefined;
+  loading: boolean = false;
+  displayedColumns: string[] = ['teamPosition', 'teamName', 'goalsScored', 'goalsConceded', 'goalDifference', 'points', 'options'];
 
-  constructor(private leagueFileConverterService: LeagueFileConverterService) { }
+  constructor(private leagueFileConverterService: LeagueFileConverterService, public dialog: MatDialog, private snackBar: MatSnackBar) { }
 
   uploadFile(event: any) {
     this.file = event.target.files[0];
   }
 
   calculateLeagueFromFile() {
-    //this.loading = !this.loading;
-    //console.log(this.file);
+    this.loading = true;
     this.leagueFileConverterService.convertFile(this.file).subscribe(
-      (event: any) => {
-        this.leagueTable = new MatTableDataSource(event.leagueTableEntries);
-        //if (typeof (event) === 'object') {
-
-        //  // Short link via api response
-        //  this.shortLink = event.link;
-
-        //  this.loading = false; // Flag variable 
-        //}
+      (leagueTable: LeagueTable) => {
+        setTimeout(() => {
+          this.leagueTable = new MatTableDataSource(leagueTable.leagueTableEntries);
+          this.loading = false;
+        }, 2000);
+      },
+      error => {
+        this.snackBar.open(`Error uploading file... ${this.getFriendlyError(error.error)}`, 'Dismiss', { duration: 3000 });
+        this.loading = false;
       }
     );
+  }
+
+  showResults(team: LeagueTableEntry) {
+    this.dialog.open(TeamResultsComponent, {
+      data: team
+    });
+  }
+
+  private getFriendlyError(error: string) {
+    if (error.length > 100)
+      error = `${error.substring(0, 200)}...`;
+
+    return error;
   }
 }

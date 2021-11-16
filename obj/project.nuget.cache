@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "JwQWq1XFid68k6LkE4Xyw4kFDXERkJSZpEYCYK5PsmCBXoW6oN9gVgNZ80yIA2G0EOqjdZQ4svJ9M9EVN/EM7Q==",
+  "dgSpecHash": "IkrAUbm8S/Csd9bBRkskdGjQnk9DX4kyitK8AmvyJGjYg2EvQbJEmG3/rPIAJljWZg0dwQXfsH8YYpz9bBN2cg==",
   "success": true,
   "projectFilePath": "C:\\Users\\tom.westwood\\Documents\\Personal\\Work\\Tom\\LeagueCalc\\LeagueCalculator.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tom.westwood\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\tom.westwood\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
+    "C:\\Users\\tom.westwood\\.nuget\\packages\\csvhelper\\27.2.0\\csvhelper.27.2.0.nupkg.sha512",
     "C:\\Users\\tom.westwood\\.nuget\\packages\\microsoft.aspnetcore.nodeservices\\3.1.21\\microsoft.aspnetcore.nodeservices.3.1.21.nupkg.sha512",
     "C:\\Users\\tom.westwood\\.nuget\\packages\\microsoft.aspnetcore.spaservices\\3.1.21\\microsoft.aspnetcore.spaservices.3.1.21.nupkg.sha512",
     "C:\\Users\\tom.westwood\\.nuget\\packages\\microsoft.aspnetcore.spaservices.extensions\\3.1.21\\microsoft.aspnetcore.spaservices.extensions.3.1.21.nupkg.sha512",

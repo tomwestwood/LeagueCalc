@@ -48,6 +48,10 @@
               "target": "Package",
               "version": "[8.1.1, )"
             },
+            "CsvHelper": {
+              "target": "Package",
+              "version": "[27.2.0, )"
+            },
             "Microsoft.AspNetCore.SpaServices.Extensions": {
               "target": "Package",
               "version": "[3.1.21, )"
