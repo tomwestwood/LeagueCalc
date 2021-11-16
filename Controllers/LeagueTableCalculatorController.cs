@@ -14,7 +14,7 @@ namespace LeagueCalculator.Controllers
     [Route("api/league-calculator")]
     public class LeagueTableCalculatorController : ControllerBase
     {
-        private List<string> acceptedFileTypes = new List<string> {"xls", "xslx", "csv"};
+        private List<string> acceptedFileTypes = new List<string> {".csv"};
 
         public LeagueTableCalculatorController() { }
 
@@ -34,17 +34,16 @@ namespace LeagueCalculator.Controllers
                 LeagueTableCalculator leagueTableCalculator;
                 switch(extensionType)
                 {
-                    case "csv":
-                    case "xls":
-                    case "xslx":
-                        leagueTableCalculator = new LeagueTableCalculator(new ExcelInputStrategy());
+                    case ".csv":
+                        leagueTableCalculator = new LeagueTableCalculator(new CsvInputStrategy(Environment.NewLine));
                         break;
                     default: 
                         throw new Exception("Unsupported file type...");  
                 }
 
-                var stringFileContents = FileTools.GetFileStringContents(file);
-                return leagueTableCalculator.GetFixtureUpload(stringFileContents);
+                //var stringFileContents = FileTools.GetFileStringContents(file);
+                var leagueTable = leagueTableCalculator.GetFixtureUpload(file);
+                return leagueTable;
             }
             catch(Exception ex)
             {

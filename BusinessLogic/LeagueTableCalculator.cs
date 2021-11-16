@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using LeagueCalculator.Models;
 using LeagueCalculator.Models.FileInputStrategy.Interfaces;
+using Microsoft.AspNetCore.Http;
 
 namespace LeagueCalculator.BusinessLogic
 {
@@ -16,12 +17,13 @@ namespace LeagueCalculator.BusinessLogic
             _inputStrategy = inputStrategy;
         }
 
-        public LeagueTable GetFixtureUpload(string fileStream)
+        public LeagueTable GetFixtureUpload(IFormFile file)
         {
-            if(!_inputStrategy.FileIsValid(fileStream))
-                throw new Exception("File contents are invalid");
+            //if(!_inputStrategy.FileIsValid(fileStream))
+            //throw new Exception("File contents are invalid");
 
-            var fixtureUpload = _inputStrategy.GetFixtureUploadFromFile(fileStream);
+            var fileContents = _inputStrategy.GetFileContents(file);
+            var fixtureUpload = _inputStrategy.GetFixtureUploadFromFile(fileContents);
             return GetLeagueTable(fixtureUpload);
         }
 
@@ -46,12 +48,7 @@ namespace LeagueCalculator.BusinessLogic
             return homeTeams.Union(awayTeams).Distinct().ToList();
         }
 
-        private List<Fixture> GetResultsForTeam(string teamName)
-        {
-            var homeGames = _fixtureUpload.Fixtures.Where(fixture => fixture.HomeTeam == teamName);
-            var awayGames = _fixtureUpload.Fixtures.Where(fixture => fixture.HomeTeam == teamName);
-            return homeGames.Union(awayGames).ToList();
-        }
+        private List<Fixture> GetResultsForTeam(string teamName) => _fixtureUpload.Fixtures.Where(fixture => fixture.HomeTeam == teamName || fixture.AwayTeam == teamName).ToList();
 
         private LeagueTableEntry GetLeagueTableEntry(string teamName, List<Fixture> results)
         {
@@ -61,6 +58,7 @@ namespace LeagueCalculator.BusinessLogic
                 GoalsScored = GetTeamGoalsScored(teamName, results),
                 GoalsConceded = GetTeamGoalsConceded(teamName, results),
                 Points = GetTeamPoints(teamName, results),
+                GoalDifference = GetTeamGoalDifference(teamName, results),
                 Results = results
             };
 
@@ -100,7 +98,7 @@ namespace LeagueCalculator.BusinessLogic
                 position++;
             });
 
-            return new LeagueTable(entries.OrderByDescending(lte => lte.TeamPosition).ToList());
+            return new LeagueTable(entries.OrderBy(lte => lte.TeamPosition).ToList());
         }
     }
 }

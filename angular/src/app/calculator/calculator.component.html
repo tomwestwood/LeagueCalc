@@ -1,0 +1,34 @@
+<div><b>Part 1:</b> - please select a .CSV file:</div>
+<input type="file" (change)="uploadFile($event)" accept=".csv" />
+
+<div *ngIf="file"><b>Part 2:</b> - calculate league table:</div>
+<button mat-raised-button *ngIf="file" (click)="calculateLeagueFromFile()">Calculate...</button> 
+
+<mat-table [dataSource]="leagueTable" *ngIf="leagueTable" class="mat-elevation-z8" matSort matSortActive="position" matSortDirection="asc">
+  <mat-header-row *matHeaderRowDef="displayedColumns;"></mat-header-row>
+  <mat-row *matRowDef="let element; columns: displayedColumns"></mat-row>
+  <ng-container matColumnDef="teamPosition">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Position</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.teamPosition}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="teamName">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Team</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.teamName}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="goalsScored">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>GF</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.goalsScored}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="goalsConceded">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>GA</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.goalsConceded}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="goalDifference">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>GD (+/-)</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.goalDifference}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="points">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Points</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.points}}</mat-cell>
+  </ng-container>
+</mat-table>

@@ -33,3 +33,10 @@ C:\Users\tom.westwood\Documents\Personal\Work\Tom\LeagueCalc\obj\Debug\net5.0\Le
 C:\Users\tom.westwood\Documents\Personal\Work\Tom\LeagueCalc\obj\Debug\net5.0\ref\LeagueCalculator.dll
 C:\Users\tom.westwood\Documents\Personal\Work\Tom\LeagueCalc\obj\Debug\net5.0\LeagueCalculator.pdb
 C:\Users\tom.westwood\Documents\Personal\Work\Tom\LeagueCalc\obj\Debug\net5.0\LeagueCalculator.genruntimeconfig.cache
+C:\Users\tom.westwood\Documents\Personal\Work\Tom\LeagueCalc\bin\Debug\net5.0\angular\angular.json
+C:\Users\tom.westwood\Documents\Personal\Work\Tom\LeagueCalc\bin\Debug\net5.0\angular\package-lock.json
+C:\Users\tom.westwood\Documents\Personal\Work\Tom\LeagueCalc\bin\Debug\net5.0\angular\package.json
+C:\Users\tom.westwood\Documents\Personal\Work\Tom\LeagueCalc\bin\Debug\net5.0\angular\tsconfig.app.json
+C:\Users\tom.westwood\Documents\Personal\Work\Tom\LeagueCalc\bin\Debug\net5.0\angular\tsconfig.json
+C:\Users\tom.westwood\Documents\Personal\Work\Tom\LeagueCalc\bin\Debug\net5.0\angular\tsconfig.spec.json
+C:\Users\tom.westwood\Documents\Personal\Work\Tom\LeagueCalc\bin\Debug\net5.0\package-lock.json
