@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using Newtonsoft.Json;
 
 namespace LeagueCalculator.Models
@@ -42,6 +43,6 @@ namespace LeagueCalculator.Models
         public string Referee { get; set; }
 
         [JsonProperty("KickOff")]
-        public DateTime KickOff => Convert.ToDateTime(Date + " " + Time);
+        public DateTime KickOff => DateTime.ParseExact(Date + " " + Time, "dd/MM/yyyy HH:mm", CultureInfo.InvariantCulture);
     }
 }
