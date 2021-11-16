@@ -12,7 +12,7 @@ import { AfterViewInit } from '@angular/core';
 })
 export class TeamResultsComponent implements AfterViewInit {
   results: MatTableDataSource<Fixture> | undefined;
-  displayedColumns: string[] = ['kickOff', 'homeTeam', 'awayTeam', 'score', 'referee'];
+  displayedColumns: string[] = ['kickOff', 'score'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(
