@@ -8,6 +8,7 @@
     <None Remove="angular\src\app\models\fixture.ts" />
     <None Remove="angular\src\app\models\leagueTable.ts" />
     <None Remove="angular\src\app\models\leagueTableEntry.ts" />
+    <None Remove="angular\src\app\services\calculator-controller.service.ts" />
     <None Remove="angular\src\app\services\league-file-converter.service.ts" />
   </ItemGroup>
 
@@ -27,6 +28,9 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="angular\src\app\models\fixture.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="angular\src\app\services\calculator-controller.service.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="angular\src\app\services\league-file-converter.service.ts" />

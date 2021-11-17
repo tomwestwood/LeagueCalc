@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CalculatorComponent } from './calculator/calculator.component';
+import { CalculatorResultsComponent } from './calculator/calculator-results/calculator-results.component';
 import { HeaderComponent } from './header/header.component';
 import { TeamResultsComponent } from './team-results/team-results.component';
 
@@ -36,6 +37,7 @@ const materialModules = [
     AppComponent,
     HeaderComponent,
     CalculatorComponent,
+    CalculatorResultsComponent,
     TeamResultsComponent
   ],
   imports: [
