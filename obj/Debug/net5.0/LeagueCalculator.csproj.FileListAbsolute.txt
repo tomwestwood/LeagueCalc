@@ -17,7 +17,6 @@ C:\Users\tom.westwood\Documents\Personal\Work\Tom\LeagueCalc\bin\Debug\net5.0\Ne
 C:\Users\tom.westwood\Documents\Personal\Work\Tom\LeagueCalc\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\tom.westwood\Documents\Personal\Work\Tom\LeagueCalc\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\tom.westwood\Documents\Personal\Work\Tom\LeagueCalc\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\tom.westwood\Documents\Personal\Work\Tom\LeagueCalc\obj\Debug\net5.0\LeagueCalculator.csproj.AssemblyReference.cache
 C:\Users\tom.westwood\Documents\Personal\Work\Tom\LeagueCalc\obj\Debug\net5.0\LeagueCalculator.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\tom.westwood\Documents\Personal\Work\Tom\LeagueCalc\obj\Debug\net5.0\LeagueCalculator.AssemblyInfoInputs.cache
 C:\Users\tom.westwood\Documents\Personal\Work\Tom\LeagueCalc\obj\Debug\net5.0\LeagueCalculator.AssemblyInfo.cs

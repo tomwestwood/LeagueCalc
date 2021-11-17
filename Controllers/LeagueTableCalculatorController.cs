@@ -3,7 +3,6 @@ using System.Linq;
 using System.IO;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using LeagueCalculator.Tools;
 using LeagueCalculator.Models;
 using LeagueCalculator.Models.FileInputStrategy.Concrete;
 using LeagueCalculator.BusinessLogic;
