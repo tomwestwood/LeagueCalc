@@ -6,6 +6,6 @@ namespace LeagueCalculator.Models.FileInputStrategy.Interfaces
     public interface IFileInputStrategy
     {
         bool FileIsValid(string fileContents);
-        FixturesUpload GetFixtureUploadFromFile(IFormFile file);
+        List<Fixture> GetFixturesFromFileUpload(IFormFile file);
     }
 }

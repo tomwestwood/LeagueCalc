@@ -40,3 +40,4 @@ C:\Users\tom.westwood\Documents\Personal\Work\Tom\LeagueCalc\bin\Debug\net5.0\an
 C:\Users\tom.westwood\Documents\Personal\Work\Tom\LeagueCalc\bin\Debug\net5.0\angular\tsconfig.spec.json
 C:\Users\tom.westwood\Documents\Personal\Work\Tom\LeagueCalc\bin\Debug\net5.0\package-lock.json
 C:\Users\tom.westwood\Documents\Personal\Work\Tom\LeagueCalc\bin\Debug\net5.0\CsvHelper.dll
+C:\Users\tom.westwood\Documents\Personal\Work\Tom\LeagueCalc\obj\Debug\net5.0\LeagueCalculator.csproj.AssemblyReference.cache

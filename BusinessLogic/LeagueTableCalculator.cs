@@ -10,11 +10,15 @@ namespace LeagueCalculator.BusinessLogic
     public class LeagueTableCalculator
     {
         private readonly IFileInputStrategy _inputStrategy;
-        private FixturesUpload _fixtureUpload;
+        public FixturesUpload _fixtureUpload = new FixturesUpload();
 
         public LeagueTableCalculator(IFileInputStrategy inputStrategy)
+            :this(inputStrategy, new FixturesUpload()) { }
+
+        public LeagueTableCalculator(IFileInputStrategy inputStrategy, FixturesUpload fixturesUpload)
         {
             _inputStrategy = inputStrategy;
+            _fixtureUpload = fixturesUpload;
         }
 
         public LeagueTable GetFixtureUpload(IFormFile file)
@@ -22,13 +26,12 @@ namespace LeagueCalculator.BusinessLogic
             //if(!_inputStrategy.FileIsValid(fileStream))
             //throw new Exception("File contents are invalid");
 
-            var fixtureUpload = _inputStrategy.GetFixtureUploadFromFile(file);
-            return GetLeagueTable(fixtureUpload);
+            _fixtureUpload.Fixtures = _inputStrategy.GetFixturesFromFileUpload(file);
+            return GetLeagueTable();
         }
 
-        private LeagueTable GetLeagueTable(FixturesUpload fixtureUpload)
+        private LeagueTable GetLeagueTable()
         {
-            _fixtureUpload = fixtureUpload;
             var leagueTableEntries = new List<LeagueTableEntry>();
             var teams = GetTeams();
             teams.ForEach(team =>
