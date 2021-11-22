@@ -87,7 +87,7 @@ namespace LeagueCalculatorTests
         [Test]
         public void CustomUpload_TeamHasCorrectNumberOfPointsAndPosition_JointFinish(string teamName, int expectedPoints, int expectedPosition)
         {
-            // amend team C's win over team B to ensure GD is level...
+            // amend team C's win over team B to ensure GD/GS are level...
             _fileInputStrategyMock
                 .Setup(x => x.GetFixturesFromFileUpload(It.IsAny<IFormFile>()))
                 .Returns<IFormFile>(fu =>
