@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = LeagueCalculator
-build_property.ProjectDir = C:\Users\tom.westwood\Documents\Personal\Work\Tom\LeagueCalc\
+build_property.ProjectDir = C:\Users\tom.westwood\Documents\Personal\Work\Tom\LeagueCalc\LeagueCalc\

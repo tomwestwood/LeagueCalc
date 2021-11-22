@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IkrAUbm8S/Csd9bBRkskdGjQnk9DX4kyitK8AmvyJGjYg2EvQbJEmG3/rPIAJljWZg0dwQXfsH8YYpz9bBN2cg==",
+  "dgSpecHash": "NPT+mvrarJfcQUjJudzTbZoxv5eNfTihP+/vOlFg+7CawGPDPxRTLDBg93AZgAGz/RH+QtkQi1Lm326/YEBaoQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tom.westwood\\Documents\\Personal\\Work\\Tom\\LeagueCalc\\LeagueCalculator.csproj",
+  "projectFilePath": "C:\\Users\\tom.westwood\\Documents\\Personal\\Work\\Tom\\LeagueCalc\\LeagueCalc\\LeagueCalculator.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tom.westwood\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\tom.westwood\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",

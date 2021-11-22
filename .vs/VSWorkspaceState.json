@@ -3,9 +3,7 @@
     "",
     "\\BusinessLogic",
     "\\Controllers",
-    "\\Models",
-    "\\Tools"
+    "\\Models"
   ],
-  "SelectedNode": "\\LeagueCalculator.csproj",
   "PreviewInSolutionExplorer": false
 }
